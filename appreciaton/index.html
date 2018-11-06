@@ -1,1 +1,44 @@
-we love matty
+<main>
+	<button onclick="move(-1)" class="arrow">🡄</button>
+		<img src="https://papayapreisthood.github.io/asset/pics/1.jpg" alt="matty">
+	<button onclick="move(1)" class="arrow">🡆</button>
+</main>
+<style>
+	button {
+		font-size: 30px;
+		vertical-align: top;
+		height: 400px;
+		font-size: 30px;
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+		margin: 0;
+	}
+	main * {
+		display: inline-block
+	}
+	img {
+		width: 400px;
+		height: 400px;
+	}
+</style>
+<script>
+	const $ = (e) => document.querySelector(e)
+	const sources = [
+		'https://papayapreisthood.github.io/asset/pics/1.jpg',
+		'https://papayapreisthood.github.io/asset/pics/2.jpg',
+		'https://papayapreisthood.github.io/asset/pics/3.png',
+		'https://papayapreisthood.github.io/asset/pics/4.png'
+	]
+	var current = 0
+	const move = (d) => {
+		current += d
+		if (current == -1) current = sources.length - 1
+		if (current == 4) current = 0
+		$('img').src = sources[current]
+	}
+</script>
